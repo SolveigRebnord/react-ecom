@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+link {
+    text-decoration: underline;
+}
+
+@layer base {
+    h1 {
+      @apply  text-3xl text-center;
+    }
+
+}
