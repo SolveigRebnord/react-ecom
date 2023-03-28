@@ -5,15 +5,15 @@
 
 @layer base {
     h1 {
-      @apply  text-[28px] text-center font-bold ;
+      @apply  text-[28px] font-bold ;
     }
 
     h2 {
-      @apply  text-[26px] text-center font-bold ;
+      @apply  text-[26px] font-semibold;
     }
 
     h3 {
-      @apply  text-[22px] text-center font-bold ;
+      @apply  text-[22px] font-semibold ;
     }
 
     p {
@@ -25,7 +25,7 @@
     }
 
     .h1Desktop {
-      @apply  text-[40px] text-center font-bold ;
+      @apply  text-[40px] font-bold ;
     }
 
 }

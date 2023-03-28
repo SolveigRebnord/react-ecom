@@ -3,7 +3,8 @@ import tw from "tailwind-styled-components"
 import { NavLink } from "react-router-dom";
 
 const StyleHeader = tw.header`
-    p-10
+    p-8
+    py-10
     flex
     flex-row
     justify-between

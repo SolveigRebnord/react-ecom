@@ -5,7 +5,7 @@ const StyleFooter = tw.footer`
     bg-mainBeige
     w-full
     h-52
-    mt-80
+    mt-8
 `
 
 const Footer = () => {

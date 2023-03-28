@@ -4,7 +4,7 @@ import tw from "tailwind-styled-components"
 const SmallBtn = tw.button`
     bg-gray-400
     w-fit
-    py-4
+    py-3
     px-20
     rounded-sm 
     leading-snug
@@ -17,7 +17,7 @@ const SmallBtn = tw.button`
 const BigBtn = tw.button`
     bg-gray-400
     w-fit
-    py-5
+    py-3
     px-20
     rounded-md 
     leading-snug
