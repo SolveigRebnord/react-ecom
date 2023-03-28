@@ -7,14 +7,14 @@ import { getProductById } from '../store/modules/ProductsSlice';
 
 
 const OneProduct = () => {
-    const dispatch = useDispatch(); // Help you to dispatch actions, Example: dispatch(fetchProduct(id))
-    const {singleProduct, isError} = useSelector(state => state.products); // GETS YOU THE PRODUCTS FROM THE STORE
+    const dispatch = useDispatch();
+    const {singleProduct, isError} = useSelector(state => state.products); 
     let {id} = useParams();
 
 
 
     useEffect(() => {
-        if (id) { //  id exists before calling fetchProduct is necessary to prevent errors.
+        if (id) {
             dispatch(getProductById(id));
         }
     }, [dispatch, id]);
