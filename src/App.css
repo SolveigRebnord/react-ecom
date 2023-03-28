@@ -5,7 +5,10 @@
 }
 
 
-
 .active {
   color: theme('colors.mainGreen');
+}
+
+* {
+  font-family: theme('fontFamily.inter');
 }
