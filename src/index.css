@@ -21,7 +21,11 @@
     }
 
     .pTitle {
-      @apply  text-[14px] font-normal ;
+      @apply  text-[18px] font-normal ;
+    }
+
+    .pPrize {
+      @apply  text-[20px] font-light text-mainGreen;
     }
 
     .h1Desktop {
