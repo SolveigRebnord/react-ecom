@@ -5,13 +5,13 @@ const SmallBtn = tw.button`
     bg-gray-400
     w-fit
     py-3
-    px-20
+    px-16
     rounded-sm 
     leading-snug
     text-black
-    text-sm
+    text-xs
     font-semibold
-    tracking-wide
+    tracking-wider
 `
 
 const BigBtn = tw.button`

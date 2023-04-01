@@ -15,10 +15,11 @@ const productsSlice = createSlice({
         },
         SET_SINGLE_PRODUCT: (state, action) => {
             state.singleProduct = action.payload;
-            
+         
         },
     },
 });
+
 export default productsSlice.reducer
 
 
@@ -37,7 +38,6 @@ export const getProducts = () => async dispatch => {
       })
         .then(function (response) {
             let data = response.data
-            //console.log(data)
             dispatch(SET_PRODUCTS(data));
         })
         .catch(function (error) {
@@ -47,7 +47,7 @@ export const getProducts = () => async dispatch => {
 }
 
 
-export const getProductById = (id) => async dispatch => {
+export const fetchProductById = (id) => async dispatch => {
 
     axios({
         method: 'get',
@@ -55,10 +55,11 @@ export const getProductById = (id) => async dispatch => {
       })
         .then(function (response) {
             let data = response.data
+      
             dispatch(SET_SINGLE_PRODUCT(data));
         })
         .catch(function (error) {
             console.log(error);
-          });;
+          });
 
 }

@@ -1,6 +1,8 @@
 
 import tw from "tailwind-styled-components"
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import React from "react";
 
 const StyleHeader = tw.header`
     p-8
@@ -14,7 +16,18 @@ const StyleHeader = tw.header`
     font-light
 `
 
+
+
 const Header = () => {
+
+    const {cartAmount} = useSelector(state => state.cart);
+
+    let cartA = cartAmount
+
+    if (cartA == 0) {
+        cartA = ''
+    }
+
     return ( 
         <>
         <StyleHeader>
@@ -27,7 +40,10 @@ const Header = () => {
                     <NavLink to={'/contact'} >Contact Us</NavLink>
                 </nav>
                 <NavLink to={'/cart'} >
-                    <img className="" src="/cart_icon.svg" alt="Shopping cart icon"></img> 
+                    <div className="flex flex-row items-center gap-4">
+                        <img className="" src="/cart_icon.svg" alt="Shopping cart icon"></img>
+                        <span className="text-lg">{cartA}</span> 
+                    </div>
                 </NavLink>
                 <img src="/menu.svg" alt="Hamburger menu icon" className="md:hidden"></img>
             </div>

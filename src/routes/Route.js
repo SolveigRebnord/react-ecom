@@ -6,21 +6,52 @@ import Products from '../pages/Products';
 import Contact from '../pages/Contact';
 import Oneproduct from '../pages/OneProduct';
 import Checkout from '../pages/Checkout';
+import { Link } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
+import Layout from '../components/Layout';
 
 
-function Router() {
-    return (
-        <>
-            <Routes>
-                <Route path="/" element={<HomePage/>}/>
-                <Route path="/cart" element={<Cart/>}/>
-                <Route path="/products" element={<Products/>}/>
-                <Route path="/contact" element={<Contact/>}/>
-                <Route path="/product/:id" element={<Oneproduct/>}/>                
-                <Route path="/checkout" element={<Checkout/>}/>
-            </Routes>
-        </>
-    );
-}
+const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
 
-export default Router;
+      children: [
+        {
+            index: true,
+            element: <HomePage />,
+          },
+        {
+          path: "/products",
+          element: <Products />,
+          handle: {crumb: () => <Link to="/">Home</Link>}
+
+        },
+        {
+            path: "/product/:id",
+            element: <Oneproduct />,
+            handle: {crumb: () => <><Link to="/">Home</Link><Link to="/">Home</Link></>}
+
+        },
+        {
+            path: "/cart",
+            element: <Cart />,
+
+          },
+          {
+            path: "/contact",
+            element: <Contact />,
+
+          },
+          {
+            path: "/checkout",
+            element: <Checkout />,
+
+          },
+      ],
+    },
+  ]);
+
+
+
+export default router;
