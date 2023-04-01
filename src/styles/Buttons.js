@@ -24,7 +24,7 @@ const BigBtn = tw.button`
     text-black
     text-regular
     tracking-wide
-    font-bold
+    font-semibold
 `
 
 const GreenBtnS = tw(SmallBtn)`
@@ -53,8 +53,8 @@ const BeigeBtnL = tw(BigBtn)`
 const PlainBtn = tw.button`
     bg-transparent
     w-fit
-    py-3
-    px-8
+    py-2
+    px-6
     rounded-sm 
     leading-snug
     text-black
