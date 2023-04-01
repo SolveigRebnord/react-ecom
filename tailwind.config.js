@@ -16,6 +16,9 @@ module.exports = {
         'inter': 'Inter, sans-serif',
         'roboto': 'Roboto, sans-serif'
       },
+      content: {
+        'link': '"',
+      },
  
     },
   },

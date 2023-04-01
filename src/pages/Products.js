@@ -4,6 +4,9 @@ import { getProducts } from '../store/modules/ProductsSlice';
 import { Link } from 'react-router-dom';
 import {QuickBtn} from '../styles/Buttons'
 import Overlay from '../components/Overlay';
+import OverlayReducer from '../components/OverlayReducer';
+
+
 
 
 const Products = () => {
@@ -14,10 +17,6 @@ const Products = () => {
         dispatch(getProducts());
     }, [dispatch]);
 
-   
-
-    const [showProduct, setId] = useState('')
-    const [showOverlay, setOverlay] = useState(false)
   
     return (
         <>
@@ -29,36 +28,35 @@ const Products = () => {
         </div>
         <div className='flex flex-wrap justify-between lg:gap-10'>
             {products.map((product) => (
-                <div key={product.id} className="mb-20">
+                <div key={product.id} className="mb-20 w-full md:w-fit">
                     <div className="relative">
                         <img
                         src={product.imageUrl}
                         alt={product.title}
                         className="w-full md:w-80 h-96 object-cover rounded-md lg:w-64 lg:h-80"
                         loading='lazy'/>
-                 
-                        <QuickBtn onClick={() => setOverlay(true) && setId({product})} className='absolute bottom-6 left-1/2 -translate-x-1/2 z-40'>Quick View</QuickBtn>
+                        <OverlayReducer props={product} />
                     </div>
-                    <Link className='w-full md:w-fit' to={`/product/${product.id}`}>
+                  
                     <div className="mt-4 flex flex-col justify-end items-center">
                         <div>
                             <p className="pTitle text-md text-gray-700 relative">
-                                {product.title}
+                            <Link to={`/product/${product.id}`}>{product.title}  </Link>
                             </p>
                         </div>
                         <p className="pPrize">{product.price} $</p>
                     </div>
-                    </Link>
+                  
                 </div>
             ))}
         </div>
-        
-        {showProduct && showOverlay && <Overlay props={showProduct}/>}
         </section>
         </>
     )
 
 }
+//{showProduct && showOverlay && <Overlay props={showProduct}/>}
+//setOverlay(true) && setId({product})
 
 
  
