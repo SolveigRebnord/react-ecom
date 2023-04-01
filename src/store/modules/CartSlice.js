@@ -24,11 +24,20 @@ const cartSlice = createSlice({
             
         },
         REMOVE_PRODUCT_FROM_CART: (state, action) => {
-            state.cartProducts = state.cartProducts.filter(function(product) {
-                return product.id !== action.payload;
-            })
-            state.cartAmount = state.cartAmount-1
+            state.cartProducts = state.cartProducts.filter(product => product.product.id !== action.payload );
+            //mangler å fjerne antallet av produktet som fjernes totalt fra cartAmount
+        },
+
+        ADD_QUANTITY_TO_PRODUCT: (state, action) => {
+            let leprod = state.cartProducts.findIndex((product => product.id === action.payload.id));
+            state.cartProducts[leprod].amount++
+        },
+
+        REMOVE_QUANTITY_TO_PRODUCT: (state, action) => {
+            let leprod = state.cartProducts.findIndex((product => product.id === action.payload.id));
+            state.cartProducts[leprod].amount--
         }
+
 
     }
 });
@@ -37,7 +46,7 @@ const {actions, reducer} = cartSlice;
  
 export default reducer;
 
-const {ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART} = actions;
+const {ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_FROM_CART, ADD_QUANTITY_TO_PRODUCT, REMOVE_QUANTITY_TO_PRODUCT} = actions;
 
 export const AddProductToCart = (productData) => (dispatch) => {
     dispatch(ADD_PRODUCT_TO_CART(productData));
@@ -45,4 +54,13 @@ export const AddProductToCart = (productData) => (dispatch) => {
 
 export const DeleteProductFromCart = (id) => (dispatch) => {
     dispatch(REMOVE_PRODUCT_FROM_CART(id));
+}
+
+export const plusQuantity = (id) => (dispatch) => {
+    dispatch(ADD_QUANTITY_TO_PRODUCT(id));
+}
+
+
+export const minusQuantity = (id) => (dispatch) => {
+    dispatch(REMOVE_QUANTITY_TO_PRODUCT(id));
 }
