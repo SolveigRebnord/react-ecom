@@ -4,9 +4,9 @@ import tw from "tailwind-styled-components"
 const SmallBtn = tw.button`
     bg-gray-400
     w-fit
-    py-3
-    px-16
-    rounded-sm 
+    py-4
+    px-14
+    rounded-md 
     leading-snug
     text-black
     text-xs
