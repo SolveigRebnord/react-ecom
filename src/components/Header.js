@@ -1,8 +1,9 @@
 
 import tw from "tailwind-styled-components"
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import React from "react";
+import { useState, useEffect } from "react";
 
 const StyleHeader = tw.header`
     p-8
@@ -28,6 +29,14 @@ const Header = () => {
         cartA = ''
     }
 
+
+    const [showMenu, setMenu] = useState(false);
+
+    const {pathname} = useLocation();
+    useEffect(()=>{
+        setMenu(false)
+    },[pathname])
+
     return ( 
         <>
         <StyleHeader>
@@ -45,7 +54,20 @@ const Header = () => {
                         <span className="text-lg">{cartA}</span> 
                     </div>
                 </NavLink>
-                <img src="/menu.svg" alt="Hamburger menu icon" className="md:hidden"></img>
+                         
+                <div className='relative md:hidden'>
+                <button className=' flex justify-center'
+                    onClick={() => setMenu(!showMenu)}>
+                    <img src="/menu.svg" alt="Hamburger menu icon" className=""></img>
+                </button>
+                {showMenu && (
+                 <div className='burger whitespace-nowrap bg-mainGrey border-2 flex justify-center border-mainBeige absolute top-12 -right-2 w-52 h-80 rounded-md z-20 shadow-lg transition ease-in-out delay-500 duration-2000' > 
+                    <nav className="flex flex-col gap-14 justify-center items-center w-full text-center">
+                    <NavLink to={'/products'} >All products</NavLink>
+                    <NavLink to={'/contact'} >Contact Us</NavLink>
+                </nav>
+                </div>)}
+                </div>
             </div>
         </StyleHeader>
         </>
