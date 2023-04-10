@@ -92,10 +92,10 @@ const HomePage = () => {
                     </div>
         </section>
         <section className='bg-mainYellow p-8 leading-tight flex flex-col gap-10 md:flex-row md:p-14 lg:justify-center lg:gap-32 lg:p-8 lg:px-32'>
-            <div className='flex flex-col gap-2 lg:pt-10'>
-                <h2 className='text-white mb-4'>Text about us <br/> as a company</h2>
-                <p className='font-semibold max-w-sm'>Something more about us cool cool shit and stuff you know that makes us look good and stuff</p>
-                <p className='max-w-sm'>More stuff about us but in light so it's not that important, maybe you read it maybe you dont</p>
+            <div className='flex flex-col gap-1 lg:pt-10'>
+                <h2 className='text-white '>Assorted stuff <br/> does not mean cheap</h2>
+                <p className='font-semibold text-base mb-6'>It means random yet <br className='lg:hidden'></br> reliable products for any need</p>
+                <p className='max-w-sm'>At Assorted Stuff, we believe there is a better way to do e-com. A more valuable way, where customers are earned rather than bought. We're obsessively passionate about it, and our mission is to help people achieve it</p>
             </div>
             <img src='/clothing_rack.jpg' alt='Clothing racks in an old, vintage style store' className='md:w-1/2 lg:max-w-md'/>
         </section>
