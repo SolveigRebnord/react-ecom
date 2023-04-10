@@ -19,7 +19,6 @@ module.exports = {
       content: {
         'link': '"',
       },
- 
     },
   },
   plugins: [],

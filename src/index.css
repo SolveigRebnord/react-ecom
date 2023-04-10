@@ -21,7 +21,7 @@
     }
 
     .pTitle {
-      @apply  text-[18px] font-normal ;
+      @apply  text-[18px] font-semibold ;
     }
 
     .pPrize {
@@ -31,5 +31,6 @@
     .h1Desktop {
       @apply  text-[40px] font-bold ;
     }
+
 
 }

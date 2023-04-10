@@ -4,7 +4,7 @@ import tw from "tailwind-styled-components"
 const SmallBtn = tw.button`
     bg-gray-400
     w-fit
-    py-4
+    py-3.5
     px-14
     rounded-md 
     leading-snug
@@ -81,8 +81,34 @@ const QuickBtn = tw.button`
 `
 
 const LinedLink = tw.span`
+  
+    w-fit
+    mx-auto
+    underline-offset-8
     underline
-    underline-offset-4
+    h-12
+    inline-block
+    text-gray-500
+    transition 
+    ease-in
+    hover:text-black
+    hover:-translate-y-1
+    after:w-fit
+    hover:after:content-['--->']
+    hover:no-underline
+    after:font-regular
+    after:text-base
+    after:mx-auto
+    after:opacity-0
+    after:transition-opacity
+    after:duration-600
+    after:ease-in
+    after:block
+    after:h-0
+    after:leading-none
+    hover:after:delay-400
+    hover:after:opacity-100
+
 `
 
 

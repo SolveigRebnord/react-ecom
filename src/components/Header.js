@@ -11,7 +11,7 @@ const StyleHeader = tw.header`
     flex-row
     justify-between
     items-center
-    md:p-14
+    md:p-12
     font-inter
     font-light
 `

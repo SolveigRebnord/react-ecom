@@ -6,7 +6,6 @@ flex
 flex-row
 overflow-scroll
 gap-24
-
 md:px-14
 md:items-center
 md:justify-evenly
