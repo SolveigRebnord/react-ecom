@@ -108,11 +108,26 @@ const LinedLink = tw.span`
     after:leading-none
     hover:after:delay-400
     hover:after:opacity-100
-
 `
+
+const UnderlineLink = tw.span`
+    w-fit
+    mx-auto
+    underline-offset-8
+    underline
+    h-12
+    inline-block
+    transition 
+    ease-in
+    duration-100
+    delay-50
+    hover:-translate-y-1
+    hover:scale-105
+`
+
 
 //border border-solid rounded-md border-white hover:shadow-md hover:border-gray-50 hover:cursor-pointer transition ease-in delay-50 hover:scale-105
 
 
 
-export {GreenBtnS, BeigeBtnS, GreenBtnL, BeigeBtnL, PlainBtn, QuickBtn, LinedLink} 
+export {GreenBtnS, BeigeBtnS, GreenBtnL, BeigeBtnL, PlainBtn, QuickBtn, LinedLink, UnderlineLink} 
