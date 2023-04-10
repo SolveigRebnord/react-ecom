@@ -17,21 +17,24 @@ const HomePage = () => {
     }, [dispatch]);
 
     const firstThree = products.slice(0, 3);
-
+    const firstProduct = products.slice(0, 1);
 
     return (
         <>
-        <section className="mx-8 md:mx-14 md:flex flex-row-reverse justify-between items-center md:mb-20 lg:mx-72">
-            <div className="relative ">
-                <div className='hidden lg:block absolute z-30 right-5 bottom-5 lg:h-[450px] lg:w-[370px] border-2 border-solid border-mainYellow'></div>
-                <img className="w-full z-10 max-h-80 object-cover object-bottom md:max-h-[450px] md:w-[370px]" src="/header_img.jpg" />
-                <p className="absolute bottom-4 left-1/2 text-sm lg:text-base lg:bottom-7 lg:right-12" >Tablet Holder  54$</p>
+        <section className="mx-8 md:mx-14 md:flex flex-row-reverse justify-between items-center md:mb-20 lg:mx-80 lg:mt-12">
+            <div className="relative">
+                <div className='hidden lg:z-0 lg:inline-block absolute right-5 bottom-5 lg:h-[450px] lg:w-[370px] border-2 border-solid border-mainYellow'></div>
+                <img className="w-full max-h-80 object-cover object-bottom md:max-h-[450px] md:w-[370px] z-30" src="/header_img.jpg" />
+                <p className="absolute bottom-4 left-1/3 text-sm lg:text-base lg:bottom-7 lg:right-12 flex flex-row justify-center gap-4 items-baseline" >
+                    <span className='text-lg'>Tablet Holder</span>
+                    <span className='text-sm'>549 NOK</span> 
+                </p>
             </div>
             <div className="mt-4">
-                <div className='flex flex-col gap-1'>
-                    <h1 className='h1Desktop'>Random</h1>
+                <div className='flex flex-col'>
+                    <h1 className='h1Desktop leading-tight'>Random</h1>
                     <p className="font-normal text-[18px] lowercase">Good quality, easy accessible</p>
-                    <h2 className="text-mainGreen lowercase mt-1">Stuff</h2>
+                    <h2 className="text-mainGreen lowercase mt-4">Stuff</h2>
                 </div>
                 <div className='my-6'>
                     <BeigeBtnS className='w-full lg:w-fit lg:mt-8'>All products</BeigeBtnS>
@@ -52,36 +55,38 @@ const HomePage = () => {
                 <p>Our main goal is eco system <br/> Bapetti bappeti woop woop</p>
             </div>
         </section>
-        <section className='my-16 lg:mx-32'>
-            <h2 className='text-center mb-12'>New arrivals</h2>
+        <section className='my-20 lg:mx-32'>
+            <h2 className='text-center mb-16'>New arrivals</h2>
             <StyleList>
             {firstThree.map((product) => (
-                <div key={product.id} className="relative flex flex-col gap-y-3 w-full">
+                <div key={product.id} className="relative flex flex-col gap-y-4 w-full p-4 m-4 border border-solid rounded-md border-white hover:shadow-md hover:border-gray-50 hover:cursor-pointer transition ease-in delay-50 hover:scale-105">
                     <div className="min-h-40">
                         <img
                             src={product.imageUrl}
                             alt={product.title}
-                            className="h-full w-full object-contain object-center md:max-h-96"
+                            className="h-96 w-full object-cover object-center"
                             loading='lazy'/>
                     </div>
-                    <div className="mt-4 w-max md:w-fit">
+                    <div className="mt-2 w-max md:w-fit">
                         <div>
-                            <h3 className="text-md text-gray-700 relative">
+                            <h3 className="pTitle relative">
                                 <Link to={`/product/${product.id}`}>
                                     <span aria-hidden="true" className="absolute inset-0"/>{product.title}
                                 </Link>
                             </h3>
-                            <p className="mt-1 text-sm text-gray-500 w-full">{product.description}</p>
+                            <p className="mt-1 text-gray-500 w-full">{product.description}</p>
                             </div>
-                                <p className="text-sm font-medium text-gray-900">NOK{product.price}</p>
+                                <p className="pPrize text-md flex justify-end mt-4">{product.price} NOK</p>
                             </div>
                         </div>
                     ))}
                     </StyleList>
-                    <div className='text-center my-14'>
+                    <div className='text-center my-20'>
+                    <Link className='' to={'/products'}>
                         <LinedLink>
-                            <Link to={'/products'}>See all</Link>
+                            See all
                         </LinedLink>
+                        </Link>
                     </div>
         </section>
         <section className='bg-mainYellow p-8 leading-tight flex flex-col gap-10 md:flex-row md:p-14 lg:justify-center lg:gap-32 lg:p-8 lg:px-32'>
