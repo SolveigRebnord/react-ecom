@@ -9,6 +9,18 @@
   color: theme('colors.mainGreen');
 }
 
+.burger > nav > a.active {
+  text-decoration: underline;
+  text-decoration-color: theme('colors.mainBeige');
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: black;
+
+}
+
 
 * {
   font-family: theme('fontFamily.inter');
