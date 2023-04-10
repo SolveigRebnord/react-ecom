@@ -25,7 +25,7 @@
     }
 
     .pPrize {
-      @apply  text-[20px] font-light text-mainGreen;
+      @apply  text-[18px] font-light text-mainGreen;
     }
 
     .h1Desktop {

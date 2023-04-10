@@ -59,29 +59,31 @@ const HomePage = () => {
             <h2 className='text-center mb-16'>New arrivals</h2>
             <StyleList>
             {firstThree.map((product) => (
-                <div key={product.id} className="relative flex flex-col gap-y-4 w-full p-4 m-4 border border-solid rounded-md border-white hover:shadow-md hover:border-gray-50 hover:cursor-pointer transition ease-in delay-50 hover:scale-105">
+                <div key={product.id} className="w-2/3 flex flex-col gap-y-4 md:w-full md:p-4 ">
                     <div className="min-h-40">
                         <img
                             src={product.imageUrl}
                             alt={product.title}
-                            className="h-96 w-full object-cover object-center"
+                            className="h-96 md:h-52 lg:h-96 w-full object-cover object-center"
                             loading='lazy'/>
                     </div>
-                    <div className="mt-2 w-max md:w-fit">
+                    <div className="mt-2 w-full ">
                         <div>
                             <h3 className="pTitle relative">
-                                <Link to={`/product/${product.id}`}>
                                     <span aria-hidden="true" className="absolute inset-0"/>{product.title}
-                                </Link>
                             </h3>
-                            <p className="mt-1 text-gray-500 w-full">{product.description}</p>
+                            <p className="mt-1 text-gray-500 w-full line-clamp-3">{product.description}</p>
                             </div>
                                 <p className="pPrize text-md flex justify-end mt-4">{product.price} NOK</p>
                             </div>
+                            <Link to={`/product/${product.id}`} className='mx-auto my-2 lg:w-1/2'>
+                                <BeigeBtnS className='w-full rounded-none py-3 px-0 md:rounded-sm md:py-2.5 '>Go to product</BeigeBtnS>
+                            </Link>
                         </div>
+                        
                     ))}
                     </StyleList>
-                    <div className='text-center my-20'>
+                    <div className='text-center my-16'>
                     <Link className='' to={'/products'}>
                         <LinedLink>
                             See all

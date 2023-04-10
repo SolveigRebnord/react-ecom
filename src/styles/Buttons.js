@@ -111,6 +111,8 @@ const LinedLink = tw.span`
 
 `
 
+//border border-solid rounded-md border-white hover:shadow-md hover:border-gray-50 hover:cursor-pointer transition ease-in delay-50 hover:scale-105
+
 
 
 export {GreenBtnS, BeigeBtnS, GreenBtnL, BeigeBtnL, PlainBtn, QuickBtn, LinedLink} 
