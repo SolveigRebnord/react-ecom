@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import {QuickBtn} from '../styles/Buttons'
 import Overlay from '../components/Overlay';
 import OverlayReducer from '../components/OverlayReducer';
-
+import { productsBySearch } from '../store/modules/ProductsSlice';
+import Search from '../components/Search';
 
 
 
@@ -21,7 +22,10 @@ const Products = () => {
     return (
         <>
         <section className='mx-10 md:mx-16 lg:mx-52 relative'>
-        <input type={'text'} id={'search'} className="h-12 border-b border-mainOffBlack w-full rounded-sm my-4 mb-14 md:w-1/2 mx-auto block" ></input>
+
+        <div>
+            <Search />
+        </div>
         <div className='flex flex-row justify-between items-center mb-12'>
             <h1 className=''>All Products</h1>
             <img src='/filter.svg' alt='Filter icon' />
