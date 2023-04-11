@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { clearCart, DeleteProductFromCart, minusQuantity, plusQuantity } from "../store/modules/CartSlice";
 import {GreenBtnL, PlainBtn} from '../styles/Buttons'
+import PNOK from "../styles/PNOK";
 
 const CartPage = () => {
 
@@ -20,8 +21,8 @@ const CartPage = () => {
 
     return (
         <>
-        <section className="md:mx-24 lg:w-1/2 lg:m-auto h-fill">
-            <h1 className="pl-10 mb-12 md:pl-0">Cart</h1>
+        <section className="md:mx-24 lg:w-1/2 lg:m-auto my-12 md:my-28 lg:my-32">
+            <h1 className="pl-10 mb-12 ">Cart</h1>
             {cartProducts && cartProducts != {} ? 
             <>
             <div className="flex flex-col ">
@@ -62,9 +63,9 @@ const CartPage = () => {
                                     </div>
                                     <div className="">
                                         
-                                    <p className="pPrize">{round((product.product.price)*(product.amount), 2)} NOK</p>
-                                    <p className="pPrize">- {round( ((product.product.price)*(product.amount))-((product.product.discountedPrice)*(product.amount)), 2)} NOK</p>
-                                    <p className="pPrize">= {round((product.product.discountedPrice)*(product.amount), 2)} NOK</p>
+                                    <p className="pPrize">{round((product.product.price)*(product.amount), 2)} <PNOK>NOK</PNOK></p>
+                                    <p className="pPrize">- {round( ((product.product.price)*(product.amount))-((product.product.discountedPrice)*(product.amount)), 2)} <PNOK>NOK</PNOK></p>
+                                    <p className="pPrize">= {round((product.product.discountedPrice)*(product.amount), 2)} <PNOK>NOK</PNOK></p>
                                 </div>
                                 </div>
                             </div>
@@ -73,28 +74,28 @@ const CartPage = () => {
                     <section className="mx-10 mt-8 md:mt-12">
                         <div className="flex flex-row items-end justify-between text-mainOffBlack ">
                             <p className="text-base font-light">Current total</p>
-                            <p className="text-lg">{round(totalProducts, 2)} NOK</p>
+                            <p className="text-lg">{round(totalProducts, 2)} <PNOK>NOK</PNOK></p>
                         </div>
                         <div className="flex flex-row items-end justify-between text-mainGreen ">
                             <p className="text-base font-light">Discount</p>
-                            <p className="text-lg">- {round(diff, 2)} NOK</p>
+                            <p className="text-lg">- {round(diff, 2)} <PNOK>NOK</PNOK></p>
                         </div>
                         <hr className="my-8"></hr>
                         <div className="flex flex-row items-end justify-between">
                             <p className="text-xl">Subtotal</p>
-                            <p className="text-xl">{round(totalProducts-diff, 2)} NOK</p>
+                            <p className="text-xl">{round(totalProducts-diff, 2)} <PNOK>NOK</PNOK></p>
                         </div>
 
                     </section>
-                    <div className="text-center my-20">
+                    <div className="text-center my-20 md:my-32 md:mb-52 lg:mb-32">
                     <Link to={'/checkout'} >
                         <GreenBtnL onClick={(e) => dispatch(clearCart(e))}>
                         Check Out
                         </GreenBtnL></Link>
                         
                     
-                </div></> :  <div className="text-center flex flex-col gap-6  p-8 w-1/2 m-auto ">
-                        <p>I'm empty!</p>
+                </div></> :  <div className="text-center flex flex-col gap-6 p-8 w-1/2 m-auto md:mb-96 md:mt-32 md:p-14 md:border md:border-gray-200 md:shadow-md rounded-md">
+                        <p className="text-base">I'm empty!</p>
                         <Link to={'/'} className="underline">Return to shopping</Link>
                     </div>
 }

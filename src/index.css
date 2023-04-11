@@ -30,7 +30,11 @@
     }
 
     .pPrize {
-      @apply  text-[18px] font-medium text-mainGreen;
+      @apply  text-[19px] font-normal text-mainGreen;
+    }
+
+    .pNOK {
+      @apply  text-[12px] font-normal;
     }
 
     .h1Desktop {

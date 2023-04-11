@@ -7,6 +7,8 @@
 
 .active {
   color: theme('colors.mainGreen');
+  text-decoration: underline;
+  text-decoration-color: theme('colors.mainGreen');
 }
 
 .burger > nav > a.active {
@@ -18,7 +20,11 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: black;
+}
 
+footer > div > nav > ul > li > a.active {
+  color: black;
+  font-weight: 600;
 }
 
 

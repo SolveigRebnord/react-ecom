@@ -4,9 +4,9 @@ import tw from "tailwind-styled-components"
 const SmallBtn = tw.button`
     bg-gray-400
     w-fit
-    py-3.5
+    py-3
     px-14
-    rounded-md 
+    rounded-sm 
     leading-snug
     text-black
     text-xs
@@ -88,10 +88,8 @@ const LinedLink = tw.span`
     underline
     h-12
     inline-block
-    text-gray-500
     transition 
     ease-in
-    hover:text-black
     hover:-translate-y-1
     after:w-fit
     hover:after:content-['--->']

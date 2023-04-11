@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { fetchProductById } from '../store/modules/ProductsSlice';
 import { BeigeBtnS } from '../styles/Buttons';
 import { AddProductToCart } from '../store/modules/CartSlice';
-
+import PNOK from '../styles/PNOK';
 
 const OneProduct = () => {
  
@@ -34,29 +34,29 @@ useEffect(() => {
         
         <>
             {singleProduct &&
-            <div className='m-auto flex flex-col gap-4 md:mt-12'>
-                <div className='lg:flex flex-row-reverse lg:justify-center lg:items-center lg:w-full lg:px-20 lg:gap-12'>
-                    <div className='mx-10 md:m-auto lg:w-fit lg:mx-0 md:w-1/2 md:mb-12'>
-                        <img className='shadow-md m-auto max-h-80 w-full object-cover md:max-h-fit' src={singleProduct.imageUrl}></img>
-                        <ul className="flex flex-row gap-4 my-4 text-sm font-light lg:justify-end">
+            <div className='m-auto flex flex-col gap-6 '>
+                <div className='lg:flex flex-row-reverse lg:items-end lg:w-1/2 lg:mx-auto lg:gap-12'>
+                    <div className='mx-10 md:m-auto lg:w-full lg:mx-0 md:w-2/3 md:mb-6 lg:mb-0'>
+                        <img className='shadow-md m-auto max-h-72 w-fit object-cover my-10 md:max-h-fit md:w-2/3 lg:mx-auto' src={singleProduct.imageUrl}></img>
+                        <ul className="flex flex-row gap-4 my-2 text-sm font-light lg:w-2/3 lg:mx-auto">
                             {singleProduct.tags.map((tag) => (
                             <li key={tag}># {tag}</li>
                             ))}
                         </ul>
                     </div>
             
-                    <div className='flex flex-col gap-4 mx-10 md:w-2/3 md:m-auto md:flex-row lg:w-fit lg:mx-0 lg:flex-col lg:items-start lg:gap-12'>
-                        <div className='flex flex-col gap-4'>
+                    <div className='flex flex-col gap-4 mx-10 md:w-2/3 md:mx-auto md:flex-row md:justify-between lg:w-2/3  lg:flex-col lg:items-start lg:gap-20 lg:pb-16'>
+                        <div className='flex flex-col gap-2'>
                                 <h1 className='font-semibold text-2xl'>{singleProduct.title}</h1>
-                                <p className='max-w-xs'>{singleProduct.description}</p>
+                                <p className='md:max-w-[250px]'>{singleProduct.description}</p>
                         </div>
-                        <div className='flex flex-col gap-8'>
-                        {singleProduct.price == singleProduct.discountedPrice ?  <p className="pPrize">{singleProduct.price} NOK</p> 
-                        : <div className='flex flex-row justify-center gap-6 items-baseline w-full'>
-                            <p className="line-through font-light text-base">{singleProduct.price}</p>
-                            <p className="pPrize">{singleProduct.discountedPrice} NOK</p>
+                        <div className='flex flex-col gap-6'>
+                        {singleProduct.price == singleProduct.discountedPrice ?  <p className="pPrize md:text-right lg:text-left">{singleProduct.price} <PNOK>NOK</PNOK></p> 
+                        : <div className='flex flex-row justify-start gap-6 items-baseline w-full '>
+                            <p className="line-through font-light text-sm">{singleProduct.price}</p>
+                            <p className="pPrize">{singleProduct.discountedPrice} <PNOK>NOK</PNOK></p>
                         </div>}
-                                <BeigeBtnS onClick={() => dispatch(AddProductToCart(singleProduct))} className=''>Add to cart</BeigeBtnS>
+                                <BeigeBtnS onClick={() => dispatch(AddProductToCart(singleProduct))} className='w-full'>Add to cart</BeigeBtnS>
                         </div>
                     </div>
                 </div>
@@ -74,9 +74,9 @@ useEffect(() => {
                             </span></>} 
                         </div>
                     </span>
-                    <div className='flex flex-col gap-10 mt-6 md:flex-row'>
+                    <div className='flex flex-col gap-10 mt-6 mb-12 md:flex-row'>
                     {singleProduct.reviews.map((review) => (
-                           <div className='bg-white shadow-md rounded-md p-6 w-full flex flex-col gap-6'>
+                           <div className='bg-white shadow-md rounded-md p-6 md:py-10 md:px-14 w-full flex flex-col gap-6'>
                                 <div className='flex flex-row justify-between items-center'>
                                     <div>
                                         <p className='pTitle'>{review.username}</p>
@@ -94,9 +94,7 @@ useEffect(() => {
                
             </div>
             }
-             <section className='my-20 flex flex-col items-center'>
-                <h2>You might like</h2>
-            </section>
+           
         </>
     );
 };
