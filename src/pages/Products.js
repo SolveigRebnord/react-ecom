@@ -18,6 +18,8 @@ const Products = () => {
         dispatch(getProducts());
     }, [dispatch]);
 
+    
+
   
     return (
         <>
@@ -42,13 +44,20 @@ const Products = () => {
                         <OverlayReducer props={product} />
                     </div>
                   
-                    <div className="mt-4 flex flex-col justify-end items-center">
+                    <div className="mt-4 flex flex-col justify-end items-center gap-4">
                         <div>
                             <p className="pTitle text-md text-gray-700 relative">
                             <Link to={`/product/${product.id}`}>{product.title}  </Link>
                             </p>
                         </div>
-                        <p className="pPrize">{product.price} $</p>
+                        {product.price == product.discountedPrice ?  <p className="pPrize">{product.price} NOK</p> 
+                        : <div className='flex flex-row justify-center gap-6 items-baseline w-full'>
+                            <p className="line-through font-light text-base">{product.price}</p>
+                            <p className="pPrize">{product.discountedPrice} NOK</p>
+                        </div>}
+                       
+                        
+                     
                     </div>
                   
                 </div>

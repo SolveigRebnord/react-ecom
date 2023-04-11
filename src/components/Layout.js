@@ -5,7 +5,8 @@ import Breadcrumbs from './Breadcrumbs';
 
 const Layout = () => {
     return (
-    <><Header />
+    <>
+    <Header />
     <Outlet />
     <Footer />
     </>)

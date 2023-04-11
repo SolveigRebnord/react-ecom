@@ -1,7 +1,7 @@
 
-
 .App {
   text-align: center;
+
 }
 
 
@@ -25,3 +25,4 @@
 * {
   font-family: theme('fontFamily.inter');
 }
+

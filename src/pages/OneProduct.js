@@ -40,7 +40,7 @@ useEffect(() => {
                         <img className='shadow-md m-auto max-h-80 w-full object-cover md:max-h-fit' src={singleProduct.imageUrl}></img>
                         <ul className="flex flex-row gap-4 my-4 text-sm font-light lg:justify-end">
                             {singleProduct.tags.map((tag) => (
-                            <li ># {tag}</li>
+                            <li key={tag}># {tag}</li>
                             ))}
                         </ul>
                     </div>
@@ -51,8 +51,12 @@ useEffect(() => {
                                 <p className='max-w-xs'>{singleProduct.description}</p>
                         </div>
                         <div className='flex flex-col gap-8'>
-                            <p className='pPrize place-self-end lg:place-self-start'>{singleProduct.price} $</p>
-                            <BeigeBtnS onClick={() => dispatch(AddProductToCart(singleProduct))} className=''>Add to cart</BeigeBtnS>
+                        {singleProduct.price == singleProduct.discountedPrice ?  <p className="pPrize">{singleProduct.price} NOK</p> 
+                        : <div className='flex flex-row justify-center gap-6 items-baseline w-full'>
+                            <p className="line-through font-light text-base">{singleProduct.price}</p>
+                            <p className="pPrize">{singleProduct.discountedPrice} NOK</p>
+                        </div>}
+                                <BeigeBtnS onClick={() => dispatch(AddProductToCart(singleProduct))} className=''>Add to cart</BeigeBtnS>
                         </div>
                     </div>
                 </div>

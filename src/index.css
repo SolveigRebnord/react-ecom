@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 
+
+
+
 @layer base {
+
+  
     h1 {
       @apply  text-[28px] font-bold ;
     }
@@ -25,7 +30,7 @@
     }
 
     .pPrize {
-      @apply  text-[18px] font-light text-mainGreen;
+      @apply  text-[18px] font-medium text-mainGreen;
     }
 
     .h1Desktop {
@@ -34,3 +39,5 @@
 
 
 }
+
+
