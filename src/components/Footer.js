@@ -16,15 +16,16 @@ const StyleFooter = tw.footer`
     flex-col
     justify-between
     items-center
+    self-end
 `
 
 const Footer = () => {
     return ( 
-        <>
+        
         <StyleFooter>
             <div className="">
                 <nav>
-                    <ul className="flex flex-col items-center gap-6 md:flex-row md:gap-20">
+                    <ul className="flex flex-col items-center gap-6 md:flex-row md:gap-20" >
                         <li>
                             <NavLink to={'/products'} >
                                 <UnderlineLink>All products</UnderlineLink>
@@ -43,7 +44,7 @@ const Footer = () => {
             <p className=" ">© 2021 - 2023 AssortedStuff, Inc. All rights reserved</p>
          </div>
         </StyleFooter>
-        </>
+        
      );
 }
  

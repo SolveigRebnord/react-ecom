@@ -25,9 +25,11 @@ const Header = () => {
 
     let cartA = cartAmount
 
-    if (cartA == 0) {
+    if (cartA === 0) {
         cartA = ''
     }
+
+   
 
 
     const [showMenu, setMenu] = useState(false);

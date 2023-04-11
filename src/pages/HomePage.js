@@ -74,7 +74,11 @@ const HomePage = () => {
                             </h3>
                             <p className="mt-1 text-gray-500 w-full line-clamp-3">{product.description}</p>
                             </div>
-                                <p className="pPrize text-md flex justify-end mt-4">{product.price} NOK</p>
+                            {product.price == product.discountedPrice ?  <p className="pPrize text-center mt-4">{product.price} NOK</p> 
+                        : <div className='flex flex-row justify-center gap-6 items-baseline w-full mt-4'>
+                            <p className="line-through font-light text-base">{product.price}</p>
+                            <p className="pPrize">{product.discountedPrice} NOK</p>
+                        </div>}
                             </div>
                             <Link to={`/product/${product.id}`} className='w-full mx-auto my-2 lg:w-1/2'>
                                 <BeigeBtnS className='w-full rounded-none py-3 px-0 md:rounded-sm md:py-2.5 '>Go to product</BeigeBtnS>
