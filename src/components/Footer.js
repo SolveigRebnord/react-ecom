@@ -5,10 +5,11 @@ import {UnderlineLink} from '../styles/Buttons'
 
 
 const StyleFooter = tw.footer`
-    bg-mainBeige
+    bg-mainBrown
+    text-white
     w-full
     h-64
-    mt-8
+    mt-12
     p-8
     pt-14
     md:pt-20
@@ -16,7 +17,7 @@ const StyleFooter = tw.footer`
     flex-col
     justify-between
     items-center
-    self-end
+   
 `
 
 const Footer = () => {
