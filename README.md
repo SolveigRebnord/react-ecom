@@ -1,6 +1,30 @@
-# Getting Started with Create React App
+# My First React Application!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-ecommerce is an e-commerce website with the elements you would expect from a shopping site, <br> such as **products**, **shopping cart** and a **contact form**. 
+
+**Have a look:** https://react-ecom-ten.vercel.app/  <br>
+
+**Figma mockup and inspiration:** <br>
+https://www.figma.com/file/tLxrPp4ZEBJjcNq2UJ5DAC/CA-React---Shop?node-id=6%3A181&t=R7M5px5m6UlDmebL-1
+
+<br>
+
+## Technologies used:
+
+- React
+- Redux
+- HTML & CSS
+- Javascript
+- Tailwind CSS
+- yup & Formik
+- Vite js
+- Axios
+
+<br>
+
+### ( The API for this project was provided by Noroff as part of our course assignment )
+
+<br>
 
 ## Available Scripts
 
