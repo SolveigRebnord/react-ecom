@@ -1,10 +1,8 @@
 import { useFormik, FormikProvider, useField } from "formik";
-import * as yup from "yup"; //validation
+import * as yup from "yup"; 
 import React from "react";
 import { useState } from "react";
-import { type } from "@testing-library/user-event/dist/type";
 import { GreenBtnS } from "../styles/Buttons";
-import ContactConfirmation from "./ContactConformation";
 
 const TextInputLiveFeedback = ({ label, helpText, ...props }) => {
   const [field, meta] = useField(props);
