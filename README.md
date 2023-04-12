@@ -9,6 +9,11 @@ https://www.figma.com/file/tLxrPp4ZEBJjcNq2UJ5DAC/CA-React---Shop?node-id=6%3A18
 
 <br>
 
+**The API for this project was provided by Noroff as part of our course assignment**
+
+<br>
+
+
 ## Technologies used:
 
 - React
@@ -19,10 +24,6 @@ https://www.figma.com/file/tLxrPp4ZEBJjcNq2UJ5DAC/CA-React---Shop?node-id=6%3A18
 - yup & Formik
 - Vite js
 - Axios
-
-<br>
-
-### ( The API for this project was provided by Noroff as part of our course assignment )
 
 <br>
 
