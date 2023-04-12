@@ -1,5 +1,4 @@
-
-import tw from "tailwind-styled-components"
+import tw from "tailwind-styled-components";
 import { NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import React from "react";
@@ -15,67 +14,73 @@ const StyleHeader = tw.header`
     md:p-12
     font-inter
     font-light
-`
-
-
+`;
 
 const Header = () => {
+  const { cartAmount } = useSelector((state) => state.cart);
 
-    const {cartAmount} = useSelector(state => state.cart);
+  let cartA = cartAmount;
 
-    let cartA = cartAmount
+  if (cartA === 0) {
+    cartA = "";
+  }
 
-    if (cartA === 0) {
-        cartA = ''
-    }
+  const [showMenu, setMenu] = useState(false);
 
-   
+  const { pathname } = useLocation();
+  useEffect(() => {
+    setMenu(false);
+  }, [pathname]);
 
-
-    const [showMenu, setMenu] = useState(false);
-
-    const {pathname} = useLocation();
-    useEffect(()=>{
-        setMenu(false)
-    },[pathname])
-
-    return ( 
-        <>
-        <StyleHeader>
-            <NavLink to={'/'}>
-                <img src="/assorted_stuff_logo.svg" alt="Assorted stuff logo"></img>
-            </NavLink>
-            <div className="flex flex-row gap-6 md:gap-8 justify-center items-center">
-                <nav className="hidden md:flex">
-                <ul className="flex flex-row gap-10 mr-10 ">
-                            <li  className='hover:underline underline-offset-8'><NavLink to={'/products'} >All products</NavLink></li>
-                            <li  className='hover:underline underline-offset-8'>  <NavLink to={'/contact'} >Contact Us</NavLink></li>
-                        </ul>
-                </nav>
-                <NavLink to={'/cart'} >
-                    <div className="flex flex-row items-center gap-2 md:gap-4">
-                        <img className="" src="/cart_icon.svg" alt="Shopping cart icon"></img>
-                        <span className="text-lg">{cartA}</span> 
-                    </div>
-                </NavLink>
-                         
-                <div className='relative md:hidden'>
-                <button className=' flex justify-center'
-                    onClick={() => setMenu(!showMenu)}>
-                    <img src="/menu.svg" alt="Hamburger menu icon" className=""></img>
-                </button>
-                {showMenu && (
-                 <div className='burger whitespace-nowrap bg-mainGrey border-2 flex justify-center border-mainBeige absolute top-12 -right-2 w-52 h-80 rounded-md z-20 shadow-lg transition ease-in-out delay-500 duration-2000' > 
-                    <nav className="flex flex-col gap-14 justify-center items-center w-full text-center">
-                        <NavLink to={'/products'} >All products</NavLink>
-                        <NavLink to={'/contact'} >Contact Us</NavLink>
-                </nav>
-                </div>)}
-                </div>
+  return (
+    <>
+      <StyleHeader>
+        <NavLink to={"/"}>
+          <img src="/assorted_stuff_logo.svg" alt="Assorted stuff logo"></img>
+        </NavLink>
+        <div className="flex flex-row gap-6 md:gap-8 justify-center items-center">
+          <nav className="hidden md:flex">
+            <ul className="flex flex-row gap-10 mr-10 ">
+              <li className="hover:underline underline-offset-8">
+                <NavLink to={"/products"}>All products</NavLink>
+              </li>
+              <li className="hover:underline underline-offset-8">
+                {" "}
+                <NavLink to={"/contact"}>Contact Us</NavLink>
+              </li>
+            </ul>
+          </nav>
+          <NavLink to={"/cart"}>
+            <div className="flex flex-row items-center gap-2 md:gap-4">
+              <img
+                className=""
+                src="/cart_icon.svg"
+                alt="Shopping cart icon"
+              ></img>
+              <span className="text-lg">{cartA}</span>
             </div>
-        </StyleHeader>
-        </>
-     );
-}
- 
+          </NavLink>
+
+          <div className="relative md:hidden">
+            <button
+              className=" flex justify-center"
+              onClick={() => setMenu(!showMenu)}
+            >
+              <img src="/menu.svg" alt="Hamburger menu icon" className=""></img>
+            </button>
+            {showMenu && (
+              <div className="burger whitespace-nowrap bg-mainGrey border-2 flex justify-center border-mainBeige absolute top-12 -right-2 w-52 h-80 rounded-md z-20 shadow-lg transition ease-in-out delay-500 duration-2000">
+                <nav className="flex flex-col gap-14 justify-center items-center w-full text-center">
+                  <NavLink to={"/products"}>All products</NavLink>
+                  <NavLink to={"/contact"}>Contact Us</NavLink>
+                </nav>
+              </div>
+            )}
+          </div>
+        </div>
+      </StyleHeader>
+    </>
+  );
+};
+
 export default Header;

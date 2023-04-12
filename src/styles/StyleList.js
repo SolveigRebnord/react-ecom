@@ -1,5 +1,4 @@
-import tw from "tailwind-styled-components"
-
+import tw from "tailwind-styled-components";
 
 const StyleList = tw.section`
 flex
@@ -11,7 +10,6 @@ md:px-14
 items-center
 md:justify-evenly
 lg:gap-20
-`
+`;
 
 export default StyleList;
-

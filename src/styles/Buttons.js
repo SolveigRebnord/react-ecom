@@ -1,5 +1,4 @@
-import tw from "tailwind-styled-components"
-
+import tw from "tailwind-styled-components";
 
 const SmallBtn = tw.button`
     bg-gray-400
@@ -12,7 +11,7 @@ const SmallBtn = tw.button`
     text-xs
     font-semibold
     tracking-wider
-`
+`;
 
 const BigBtn = tw.button`
     bg-gray-400
@@ -25,30 +24,27 @@ const BigBtn = tw.button`
     text-regular
     tracking-wide
     font-semibold
-`
+`;
 
 const GreenBtnS = tw(SmallBtn)`
     bg-mainGreen
     text-white
-`
-
+`;
 
 const BeigeBtnS = tw(SmallBtn)`
     bg-mainBrown
     text-white
-`
+`;
 
 const GreenBtnL = tw(BigBtn)`
     bg-mainGreen
     text-white
-`
-
+`;
 
 const BeigeBtnL = tw(BigBtn)`
     bg-mainBrown
     text-white
-`
-
+`;
 
 const PlainBtn = tw.button`
     bg-transparent
@@ -63,8 +59,7 @@ const PlainBtn = tw.button`
     tracking-wide
     border
     border-black
-`
-
+`;
 
 const QuickBtn = tw.button`
     bg-mainYellow
@@ -78,7 +73,7 @@ const QuickBtn = tw.button`
     font-bold
     text-sm
     tracking-widest
-`
+`;
 
 const LinedLink = tw.span`
   
@@ -106,7 +101,7 @@ const LinedLink = tw.span`
     after:leading-none
     hover:after:delay-400
     hover:after:opacity-100
-`
+`;
 
 const UnderlineLink = tw.span`
     w-fit
@@ -121,11 +116,17 @@ const UnderlineLink = tw.span`
     delay-50
     hover:-translate-y-1
     hover:scale-105
-`
-
+`;
 
 //border border-solid rounded-md border-white hover:shadow-md hover:border-gray-50 hover:cursor-pointer transition ease-in delay-50 hover:scale-105
 
-
-
-export {GreenBtnS, BeigeBtnS, GreenBtnL, BeigeBtnL, PlainBtn, QuickBtn, LinedLink, UnderlineLink} 
+export {
+  GreenBtnS,
+  BeigeBtnS,
+  GreenBtnL,
+  BeigeBtnL,
+  PlainBtn,
+  QuickBtn,
+  LinedLink,
+  UnderlineLink,
+};

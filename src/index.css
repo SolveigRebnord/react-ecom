@@ -2,46 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
 @layer base {
+  h1 {
+    @apply text-[28px] font-bold;
+  }
 
-  
-    h1 {
-      @apply  text-[28px] font-bold ;
-    }
+  h2 {
+    @apply text-[26px] font-semibold;
+  }
 
-    h2 {
-      @apply  text-[26px] font-semibold;
-    }
+  h3 {
+    @apply text-[22px] font-semibold;
+  }
 
-    h3 {
-      @apply  text-[22px] font-semibold ;
-    }
+  p {
+    @apply text-[12px] font-normal;
+  }
 
-    p {
-      @apply  text-[12px] font-normal ;
-    }
+  .pTitle {
+    @apply text-[18px] font-semibold;
+  }
 
-    .pTitle {
-      @apply  text-[18px] font-semibold ;
-    }
+  .pPrize {
+    @apply text-[19px] font-normal text-mainGreen;
+  }
 
-    .pPrize {
-      @apply  text-[19px] font-normal text-mainGreen;
-    }
+  .pNOK {
+    @apply text-[12px] font-normal;
+  }
 
-    .pNOK {
-      @apply  text-[12px] font-normal;
-    }
-
-    .h1Desktop {
-      @apply  text-[40px] font-bold ;
-    }
-
-
+  .h1Desktop {
+    @apply text-[40px] font-bold;
+  }
 }
-
-
